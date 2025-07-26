@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Fyah Pan Portfolio</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Segoe UI', sans-serif; background: #fafafa; color: #333; line-height: 1.6; }
+    header { background: #111; color: #fff; padding: 60px 20px; text-align: center; }
+    header h1 { font-size: 2.8em; margin-bottom: 10px; }
+    header p { font-size: 1.2em; opacity: 0.8; }
+    .container { max-width: 960px; margin: 40px auto; padding: 0 20px; }
+    .bio { background: #fff; padding: 30px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); margin-bottom: 40px; }
+    .bio h2 { font-size: 1.8em; margin-bottom: 15px; }
+    .slideshow { display: flex; flex-wrap: wrap; gap: 15px; justify-content: center; }
+    .slideshow img { width: 30%; min-width: 200px; border-radius: 10px; cursor: pointer; transition: transform 0.3s ease; }
+    .slideshow img:hover { transform: scale(1.03); }
+    .popup { display: none; position: fixed; z-index: 1000; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.85); justify-content: center; align-items: center; }
+    .popup img { max-width: 90%; max-height: 80vh; border-radius: 10px; }
+    .popup .close { position: absolute; top: 20px; right: 30px; font-size: 40px; color: #fff; cursor: pointer; }
+    footer { background: #111; color: white; text-align: center; padding: 30px 10px; margin-top: 60px; }
+    .socials a { color: white; margin: 0 12px; text-decoration: none; font-size: 1.3em; transition: color 0.3s ease; }
+    .socials a:hover { color: #1da1f2; }
+    @media (max-width: 600px) {
+      header h1 { font-size: 2em; }
+      .slideshow img { width: 100%; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Fyah Pan</h1>
+    <p>Visual Artist • Storyteller • Fire in Every Frame</p>
+  </header>
+
+  <div class="container">
+    <section class="bio">
+      <h2>About Me</h2>
+      <p>
+        I'm an upcoming artist passionate about turning energy into visuals. Whether through photography, digital edits, or cover art, I express moments that speak louder than words.<br><br>
+        This is the beginning of something global. Welcome to the fire.
+      </p>
+    </section>
+
+    <section class="slideshow">
+      <img src="https://via.placeholder.com/600x400?text=Fyah+Art+1" onclick="openPopup(this.src)">
+      <img src="https://via.placeholder.com/600x400?text=Fyah+Art+2" onclick="openPopup(this.src)">
+      <img src="https://via.placeholder.com/600x400?text=Fyah+Art+3" onclick="openPopup(this.src)">
+    </section>
+  </div>
+
+  <div class="popup" id="popup">
+    <span class="close" onclick="closePopup()">&times;</span>
+    <img id="popup-img" src="">
+  </div>
+
+  <footer>
+    <p>Connect with me:</p>
+    <div class="socials">
+      <a href="https://instagram.com/" target="_blank">Instagram</a>
+      <a href="#" target="_blank">TikTok</a>
+      <a href="#" target="_blank">YouTube</a>
+      <a href="#" target="_blank">Portfolio</a>
+    </div>
+  </footer>
+
+  <script>
+    function openPopup(src) {
+      document.getElementById('popup').style.display = 'flex';
+      document.getElementById('popup-img').src = src;
+    }
+    function closePopup() {
+      document.getElementById('popup').style.display = 'none';
+    }
+  </script>
+
+</body>
+</html>
